@@ -1,0 +1,14 @@
+Plan do zrealizowania:
+
+1. Założyć bazę danych MARKETPLACE
+w której będą 2 tabele:
+  users
+  wallet
+  
+2. System logowania
+
+3. API pobierające aktualne wartości walut, metali i krypto
+
+4. System do robienia transakcji.
+
+5. Statystyki
