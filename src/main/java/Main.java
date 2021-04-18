@@ -5,7 +5,7 @@ public class Main {
         connectionManager.getConnection();
 
         CryptoListing cryptoListing = new CryptoListing();
-        cryptoListing.getCryptoListing();
+        cryptoListing.makeAPICall("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", );
 
     }
 
