@@ -18,21 +18,22 @@ public class CryptoListing {
 
     private static String apiKey = "c11564d3-18ef-4eb7-8dc4-4fa2d2c84cf6";
 
-    public static void getCryptoListing() {
+    public static String getCryptoListing() {
         String uri = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
         List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
         paratmers.add(new BasicNameValuePair("start", "1"));
-        paratmers.add(new BasicNameValuePair("limit", "5000"));
+        paratmers.add(new BasicNameValuePair("limit", "2"));
         paratmers.add(new BasicNameValuePair("convert", "USD"));
 
         try {
             String result = makeAPICall(uri, paratmers);
-            System.out.println(result);
+            return result;
         } catch (IOException e) {
             System.out.println("Error: cannont access content - " + e.toString());
         } catch (URISyntaxException e) {
             System.out.println("Error: Invalid URL " + e.toString());
         }
+        return " ";
     }
 
         public static String makeAPICall (String uri, List < NameValuePair > parameters)
