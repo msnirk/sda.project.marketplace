@@ -22,7 +22,7 @@ public class CryptoListing {
         String uri = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
         List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
         paratmers.add(new BasicNameValuePair("start", "1"));
-        paratmers.add(new BasicNameValuePair("limit", "2"));
+        paratmers.add(new BasicNameValuePair("limit", "2800"));
         paratmers.add(new BasicNameValuePair("convert", "USD"));
 
         try {
@@ -35,6 +35,27 @@ public class CryptoListing {
         }
         return " ";
     }
+
+    public static String getFiatListing() {
+        String uri = "https://pro-api.coinmarketcap.com/v1/fiat/map";
+        List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
+        paratmers.add(new BasicNameValuePair("start", "1"));
+        paratmers.add(new BasicNameValuePair("limit", "5000"));
+        paratmers.add(new BasicNameValuePair("sort", "id"));
+        paratmers.add(new BasicNameValuePair("include_metals", "true"));
+
+
+        try {
+            String result = makeAPICall(uri, paratmers);
+            return result;
+        } catch (IOException e) {
+            System.out.println("Error: cannont access content - " + e.toString());
+        } catch (URISyntaxException e) {
+            System.out.println("Error: Invalid URL " + e.toString());
+        }
+        return " ";
+    }
+
 
         public static String makeAPICall (String uri, List < NameValuePair > parameters)
             throws URISyntaxException, IOException {
@@ -63,4 +84,4 @@ public class CryptoListing {
             return response_content;
         }
 
-    }
+}

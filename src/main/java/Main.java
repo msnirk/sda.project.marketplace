@@ -12,14 +12,19 @@ public class Main {
 
         CryptoListing cryptoListing = new CryptoListing();
         cryptoListing.getCryptoListing();
+        cryptoListing.getFiatListing();
 
-        JSONObject obj = new JSONObject(cryptoListing.getCryptoListing());
-        JSONArray data = obj.getJSONArray("data");
+        JSONObject cryptoObj = new JSONObject(cryptoListing.getCryptoListing());
+        JSONArray data = cryptoObj.getJSONArray("data");
+        JSONObject fiatObj = new JSONObject(cryptoListing.getFiatListing());
+        JSONArray fiat = fiatObj.getJSONArray("fiat");
         System.out.println(data.length());
         System.out.println(data.getJSONObject(0).getString("symbol"));
         System.out.println(data.getJSONObject(0).getJSONObject("quote").getJSONObject("USD").getDouble("price"));
+        System.out.println(data.getJSONObject(1).getString("symbol"));
         System.out.println(data.getJSONObject(1).getJSONObject("quote").getJSONObject("USD").getDouble("price"));
 
+        System.out.println(fiat.getJSONObject(6).getString("symbol"));
     }
 }
 
