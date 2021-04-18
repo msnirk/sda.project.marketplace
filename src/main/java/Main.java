@@ -4,6 +4,8 @@ public class Main {
         ConnectionManager connectionManager = new ConnectionManager();
         connectionManager.getConnection();
 
+        CryptoListing cryptoListing = new CryptoListing();
+        cryptoListing.getCryptoListing();
 
     }
 
