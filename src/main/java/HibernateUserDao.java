@@ -1,5 +1,4 @@
 import org.hibernate.Session;
-import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
@@ -13,11 +12,11 @@ public class HibernateUserDao implements UserDao {
     }
 
     @Override
-    public void saveUser(User user) {
+    public void saveUser(Users users) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.save(user);
+            session.save(users);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -28,7 +27,7 @@ public class HibernateUserDao implements UserDao {
     }
 
     @Override
-    public User findUserByUsername(String username) {
+    public Users findUserByUsername(String username) {
         return null;
     }
 

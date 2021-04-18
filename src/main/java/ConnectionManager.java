@@ -1,3 +1,7 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import java.sql.*;
 
 public class ConnectionManager {
@@ -6,7 +10,22 @@ public class ConnectionManager {
     private static String password = "ktG35u5HAA";
     private static Connection con;
 
+    public static Connection getHibernateConnection() {
+        Configuration configuration = new Configuration();
+        SessionFactory sessionFactory = configuration.configure()
+                .buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        {
+            System.out.println("Connected");
+        }
+        session.close();
+        return con;
+    }
+
+
     public static Connection getConnection() {
+
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             System.out.println("Server connected!");
             Statement stmt = null;
@@ -24,10 +43,8 @@ public class ConnectionManager {
                     System.out.println(resultset.getString("Database"));
                 }
             } catch (SQLException ex) {
-                // handle any errors
                 ex.printStackTrace();
             } finally {
-                // release resources
                 if (resultset != null) {
                     try {
                         resultset.close();

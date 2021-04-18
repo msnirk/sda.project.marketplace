@@ -8,9 +8,10 @@ public class Main {
 
 
         ConnectionManager connectionManager = new ConnectionManager();
-        connectionManager.getConnection();
+   //     connectionManager.getConnection();
+        connectionManager.getHibernateConnection();
 
-        CryptoListing cryptoListing = new CryptoListing();
+ /*       CryptoListing cryptoListing = new CryptoListing();
         cryptoListing.getCryptoListing();
         cryptoListing.getFiatListing();
 
@@ -27,7 +28,7 @@ public class Main {
         System.out.println(fiatObj.getJSONArray("data").getJSONObject(0).getString("symbol"));
         System.out.println(fiatObj.getJSONArray("data").getJSONObject(9).getString("symbol"));
         System.out.println(fiatObj.getJSONArray("data").getJSONObject(94).getString("symbol"));
-        System.out.println(fiatObj.getJSONArray("data").getJSONObject(93).getString("symbol"));
+        System.out.println(fiatObj.getJSONArray("data").getJSONObject(93).getString("symbol")); */
     }
 }
 

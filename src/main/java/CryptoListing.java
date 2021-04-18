@@ -22,7 +22,7 @@ public class CryptoListing {
         String uri = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
         List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
         paratmers.add(new BasicNameValuePair("start", "1"));
-        paratmers.add(new BasicNameValuePair("limit", "2800"));
+        paratmers.add(new BasicNameValuePair("limit", "2"));
         paratmers.add(new BasicNameValuePair("convert", "USD"));
 
         try {
@@ -40,7 +40,7 @@ public class CryptoListing {
         String uri = "https://pro-api.coinmarketcap.com/v1/fiat/map";
         List<NameValuePair> paratmers = new ArrayList<>();
         paratmers.add(new BasicNameValuePair("start", "1"));
-        paratmers.add(new BasicNameValuePair("limit", "5000"));
+        paratmers.add(new BasicNameValuePair("limit", "100"));
         paratmers.add(new BasicNameValuePair("sort", "id"));
         paratmers.add(new BasicNameValuePair("include_metals", "true"));
 
