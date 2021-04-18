@@ -24,7 +24,10 @@ public class Main {
         System.out.println(data.getJSONObject(1).getString("symbol"));
         System.out.println(data.getJSONObject(1).getJSONObject("quote").getJSONObject("USD").getDouble("price"));
 
-        System.out.println(fiat.getJSONObject(6).getString("symbol"));
+        System.out.println(fiatObj.getJSONArray("data").getJSONObject(0).getString("symbol"));
+        System.out.println(fiatObj.getJSONArray("data").getJSONObject(9).getString("symbol"));
+        System.out.println(fiatObj.getJSONArray("data").getJSONObject(94).getString("symbol"));
+        System.out.println(fiatObj.getJSONArray("data").getJSONObject(93).getString("symbol"));
     }
 }
 
