@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="sda.project.marketplace" table="Users">
-        <id name="id" column="id" type="int">
+        <id name="id" column="user_id" type="int">
             <generator class="native"></generator>
         </id>
         <property name="firstName" column="name" type="string"/>
@@ -12,7 +12,7 @@
         <property name="email" column="email" type="string"/>
         <property name="password" column="password" type="string"/>
         <set name="Wallet" cascade="all">
-            <key column="user_id"></key>
+            <key column="values_id"></key>
             <one-to-many class="sda.project.marketplace.Wallet"/>
         </set>
     </class>

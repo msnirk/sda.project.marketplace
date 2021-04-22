@@ -7,5 +7,6 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost/marketplace</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">poletko12</property>
+        <mapping resource="Users.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
