@@ -14,7 +14,9 @@ public class ConnectionManager {
         Configuration configuration = new Configuration();
         SessionFactory sessionFactory = configuration.configure()
            .addAnnotatedClass(Users.class)
+                .addAnnotatedClass(Wallet.class)
                 .buildSessionFactory();
+
         Session session = sessionFactory.openSession();
 
         {
