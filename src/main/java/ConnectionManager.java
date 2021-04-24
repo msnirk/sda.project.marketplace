@@ -16,5 +16,6 @@ public class ConnectionManager {
 
     public SessionFactory getSessionFactory() {
                 return sessionFactory;
+
     }
 }
