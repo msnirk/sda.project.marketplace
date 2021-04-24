@@ -5,14 +5,15 @@ import org.hibernate.cfg.Configuration;
 import java.sql.*;
 
 public class ConnectionManager {
-    private static String url = "jdbc:mysql://sql11.freesqldatabase.com:3306";
-    private static String username = "sql11406222";
-    private static String password = "ktG35u5HAA";
+    private static String url = "jdbc:mysql://localhost:3306";
+    private static String username = "root";
+    private static String password = "SDAsda504";
     private static Connection con;
 
     public static Connection getHibernateConnection() {
         Configuration configuration = new Configuration();
         SessionFactory sessionFactory = configuration.configure()
+           .addAnnotatedClass(Users.class)
                 .buildSessionFactory();
         Session session = sessionFactory.openSession();
 
