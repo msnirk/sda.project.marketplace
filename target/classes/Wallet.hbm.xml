@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="sda.project.marketplace" table="Users">
+        <id name="id" column="values_id" type="int">
+            <generator class="native"></generator>
+        </id>
+        <property name="BTC" column="bitcoin" type="int"/>
+        <property name="ETH" column="eterium" type="int"/>
+        <property name="GOLD" column="gold" type="int"/>
+        <property name="SILVER" column="silver" type="int"/>
+        <property name="USD" column="dolar" type="int"/>
+        <property name="EURO" column="euro" type="int"/>
+        <set name="User" cascade="all">
+            <key column="user_id"></key>
+            <one-to-many class="sda.project.marketplace.Wallet"/>
+        </set>
+    </class>
+</hibernate-mapping>
