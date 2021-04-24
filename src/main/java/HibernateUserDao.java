@@ -16,6 +16,13 @@ public class HibernateUserDao implements UserDao {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
+            Users users1 = new Users();
+            users1.setFirstName("Michal");
+            users1.setLastName("Maniewski");
+            users1.setUsername("Maniek");
+            users1.setEmail("msnirk@gmail.com");
+            users1.setPassword("dupa123");
+            session.save(users1);
             session.save(users);
             transaction.commit();
         } catch (Exception e) {
