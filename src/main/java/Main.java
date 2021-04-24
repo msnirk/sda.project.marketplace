@@ -1,6 +1,4 @@
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 public class Main {
 
@@ -9,7 +7,7 @@ public class Main {
 
         ConnectionManager connectionManager = new ConnectionManager();
    //     connectionManager.getConnection();
-        connectionManager.getHibernateConnection();
+        connectionManager.getConnection();
 
  /*       CryptoListing cryptoListing = new CryptoListing();
         cryptoListing.getCryptoListing();

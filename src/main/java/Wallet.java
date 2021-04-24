@@ -38,23 +38,47 @@ public class Wallet implements Serializable {
         return EURO;
     }
 
+    public void setEURO(String EURO) {
+        this.EURO = EURO;
+    }
+
     public String getDOLAR() {
         return DOLAR;
+    }
+
+    public void setDOLAR(String DOLAR) {
+        this.DOLAR = DOLAR;
     }
 
     public String getGOLD() {
         return GOLD;
     }
 
+    public void setGOLD(String GOLD) {
+        this.GOLD = GOLD;
+    }
+
     public String getSILVER() {
         return SILVER;
+    }
+
+    public void setSILVER(String SILVER) {
+        this.SILVER = SILVER;
     }
 
     public String getBTC() {
         return BTC;
     }
 
+    public void setBTC(String BTC) {
+        this.BTC = BTC;
+    }
+
     public String getETH() {
         return ETH;
+    }
+
+    public void setETH(String ETH) {
+        this.ETH = ETH;
     }
 }

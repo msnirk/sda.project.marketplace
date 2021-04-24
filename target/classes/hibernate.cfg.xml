@@ -6,7 +6,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/marketplace</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">SDAsda504</property>
+        <property name="hibernate.connection.password">poletko12</property>
         <property name="hbm2ddl.auto">create-drop</property>
         <property name="show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
