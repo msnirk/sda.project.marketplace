@@ -1,11 +1,6 @@
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Wallets")
@@ -17,68 +12,79 @@ public class Wallet implements Serializable {
     private int id;
 
     @Column(name = "euro")
-    private String EURO;
+    private double euro;
 
     @Column(name = "dolar")
-    private String DOLAR;
+    private double dolar;
 
     @Column(name = "gold")
-    private String GOLD;
+    private double gold;
 
     @Column(name = "silver")
-    private String SILVER;
+    private double silver;
 
     @Column(name = "bitcoin")
-    private String BTC;
+    private double bitcoin;
 
-    @Column(name = "eterium")
-    private String ETH;
+    @Column(name = "etherium")
+    private double etherium;
 
-    public String getEURO() {
-        return EURO;
+    @OneToOne
+    private Users owner;
+
+    public Users getOwner() {
+        return owner;
     }
 
-    public void setEURO(String EURO) {
-        this.EURO = EURO;
+    public void setOwner(Users owner) {
+        this.owner = owner;
     }
 
-    public String getDOLAR() {
-        return DOLAR;
+    public double getEuro() {
+        return euro;
     }
 
-    public void setDOLAR(String DOLAR) {
-        this.DOLAR = DOLAR;
+    public void setEuro(double euro) {
+        this.euro = euro;
     }
 
-    public String getGOLD() {
-        return GOLD;
+    public double getDolar() {
+        return dolar;
     }
 
-    public void setGOLD(String GOLD) {
-        this.GOLD = GOLD;
+    public void setDolar(double dolar) {
+        this.dolar = dolar;
     }
 
-    public String getSILVER() {
-        return SILVER;
+    public double getGold() {
+        return gold;
     }
 
-    public void setSILVER(String SILVER) {
-        this.SILVER = SILVER;
+    public void setGold(double gold) {
+        this.gold = gold;
     }
 
-    public String getBTC() {
-        return BTC;
+    public double getSilver() {
+        return silver;
     }
 
-    public void setBTC(String BTC) {
-        this.BTC = BTC;
+    public void setSilver(double silver) {
+        this.silver = silver;
     }
 
-    public String getETH() {
-        return ETH;
+    public double getBitcoin() {
+        return bitcoin;
     }
 
-    public void setETH(String ETH) {
-        this.ETH = ETH;
+    public void setBitcoin(double bitcoin) {
+        this.bitcoin = bitcoin;
+    }
+
+    public double getEtherium() {
+        return etherium;
+    }
+
+    public void setEtherium(double etherium) {
+        this.etherium = etherium;
     }
 }

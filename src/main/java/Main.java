@@ -6,14 +6,26 @@ public class Main {
         ConnectionManager connectionManager = new ConnectionManager();
 
 
-        HibernateUserDao hud = new HibernateUserDao(connectionManager.getSessionFactory());
+        UserDao hud = new HibernateUserDao(connectionManager.getSessionFactory());
+        WalletDao walletDao = new HibernateWalletDao(connectionManager.getSessionFactory());
+
+
         Users user = new Users();
-        user.setFirstName("Dawid");
-        user.setLastName("Guzenda");
-        user.setUsername("Guzenda");
-        user.setEmail("dguzenda@gmail.com");
+        user.setFirstName("Michal");
+        user.setLastName("Maniewski");
+        user.setUsername("Maniek");
+        user.setEmail("msnirk@gmail.com");
         user.setPassword("dupa123");
         hud.saveUser(user);
+        Wallet wallet = new Wallet();
+        wallet.setOwner(user);
+        wallet.setBitcoin(0);
+        wallet.setDolar(0);
+        wallet.setEuro(1000);
+        wallet.setEtherium(0);
+        wallet.setGold(0);
+        wallet.setSilver(0);
+        walletDao.createUserWallet(wallet);
     }
 }
 
